@@ -4,8 +4,8 @@ instance_class: F1
 
 handlers:
   - url: /
-    static_files: dist/public/index.html
-    upload: dist/public/index.html
+    static_files: dist/index.html
+    upload: dist/index.html
 
   - url: /(.*)
     static_files: dist/\1
