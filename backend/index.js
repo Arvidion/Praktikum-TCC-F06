@@ -14,6 +14,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3000", 
     "http://localhost:5000",
+    "yojo-f06-dot-f-06-450706.uc.r.appspot.com"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
