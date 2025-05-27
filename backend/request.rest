@@ -1,0 +1,115 @@
+# =================== TRAIN SCHEDULE API ===================
+
+### Get all stations
+GET http://localhost:5000/stasiun
+
+### Get station by ID
+GET http://localhost:5000/stasiun/1
+
+### Create new station
+POST http://localhost:5000/stasiun
+Content-Type: application/json
+
+{
+    "namaStasiun": "Stasiun Palur"
+}
+
+### Update station
+PATCH http://localhost:5000/stasiun/1
+Content-Type: application/json
+
+{
+    "namaStasiun": "Stasiun Yogyakarta"
+}
+
+### Delete station
+DELETE http://localhost:5000/stasiun/1
+
+### Get all trains
+GET http://localhost:5000/kereta
+
+### Get train by ID
+GET http://localhost:5000/kereta/1
+
+### Create new train
+POST http://localhost:5000/kereta
+Content-Type: application/json
+
+{
+    "nomorKereta": "KA-001",
+    "jenisKereta": "Eksekutif"
+}
+
+### Update train
+PUT http://localhost:5000/kereta/1
+Content-Type: application/json
+
+{
+    "nomorKereta": "KA-001 Updated",
+    "jenisKereta": "Bisnis"
+}
+
+### Delete train
+DELETE http://localhost:5000/kereta/1
+
+### Get all schedules
+GET http://localhost:5000/jadwal
+
+### Get schedule by ID
+GET http://localhost:5000/jadwal/1
+
+### Create new schedule
+POST http://localhost:5000/jadwal
+Content-Type: application/json
+
+{
+    "namaRute": "Gambir - Surabaya",
+    "idStasiunAwal": 1,
+    "idStasiunAkhir": 2,
+    "idKereta": 1,
+    "waktuKeberangkatan": "2024-05-25T08:00:00.000Z",
+    "waktuTiba": "2024-05-25T16:00:00.000Z"
+}
+
+### Update schedule
+PATCH http://localhost:5000/jadwal/1
+Content-Type: application/json
+
+{
+    "namaRute": "Gambir - Surabaya Express",
+    "idStasiunAwal": 1,
+    "idStasiunAkhir": 2,
+    "idKereta": 1,
+    "waktuKeberangkatan": "2024-05-25T07:00:00.000Z",
+    "waktuTiba": "2024-05-25T15:00:00.000Z"
+}
+
+### Delete schedule
+DELETE http://localhost:5000/jadwal/1
+
+### Search schedules by stations
+GET http://localhost:5000/jadwal/search?from=1&to=2
+
+# =================== LOCALHOST SERVER ===================
+### Step 1: Register a new user
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "username": "havas",
+    "password": "a",
+    "confirm_password": "a"
+}
+
+### Step 2: Login with the registered user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username": "havas",
+    "password": "a"
+}
+
+### Step 3: Get all users (requires access token from login)
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJoYXZhcyIsImlhdCI6MTc0ODM0MTE2MSwiZXhwIjoxNzQ4MzQ0NzYxfQ.WTqMBhtDyicHl7MR4HNUK4JHXZVlDPBCsPFDwDToYuw
